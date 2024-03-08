@@ -40,7 +40,7 @@ const Login =()=>{
     }, [userState]);
     return (
         <>
-             <form>
+            { !userState.isLoggedIn && <form>
                 <p>{loginError}</p>
                 <input onInput={(e) => {
                     setUsername(e.target.value)
@@ -49,7 +49,8 @@ const Login =()=>{
                     setPassword(e.target.value)
                 }} placeholder="enter your password"/>
                 <button type="button" onClick={loginSubmit}>Login</button>
-            </form>
+            </form>}
+
 
         </>
     )
