@@ -2,14 +2,18 @@ import {useEffect, useReducer, useState} from "react";
 import users from "../data/users.json"
 import {GetUsersInitialData, UserReducers} from "../Reducers/user";
 
+
+
 const Login =()=>{
 
     const [username,setUsername]=useState(null);
     const [password,setPassword]=useState(null);
     const [loginError,setLoginError]=useState(null);
-    // const [isLoggedIn,setIsLoggedIn]=useState(null)
+
+
     const [userState,userDispatch]=useReducer(UserReducers,GetUsersInitialData())
     console.log(userState)
+
     const loginSubmit=()=>{
         if( username=== null || password===null || username.trim() === ""   || password.trim()=== ""){
             setLoginError("Niste uneli sifru ili korisnicko ime");
